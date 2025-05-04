@@ -7,64 +7,64 @@ import os  # responsável por limpar o console
 print("Digite (1) - Jogar humano contra humano")
 print("Digite (2) - Jogar humano contra computador")
 print("Digite (3) - Jogar computador contra computador")
-escolherModo = input("")
+escolher_modo = input("")
 
 # limpa o console
 os.system("cls")
 
 # direciona o código para certo caminho se o modo for 1
-if escolherModo == "1":
+if escolher_modo == "1":
     # certifica-se que o modo escolhido foi o correto
     print("Modo escolhido: humano x humano. Caso deseje continuar, digite (1)")
     print("Caso deseje mudar o modo de jogo, digite (2) para encerrar o programa!")
-    garantirModo = input("")
+    garantir_modo = input("")
     
-    if garantirModo == "1":
+    if garantir_modo == "1":
         # pega os nomes dos jogadores, limpando o console antes
         os.system("cls")
-        primeiroJogador = input("Digite o nome do primeiro jogador: ")
+        primeiro_jogador = input("Digite o nome do primeiro jogador: ")
         os.system("cls")
-        segundoJogador = input("Digite o nome do segundo jogador: ")
+        segundo_jogador = input("Digite o nome do segundo jogador: ")
         
         # estabelece as variáveis iniciais
-        vitoriasPrimeiroJogador = 0
-        vitoriasSegundoJogador = 0
+        vitorias_primeiro_jogador = 0
+        vitorias_segundo_jogador = 0
         empates = 0
         
-        while garantirModo == "1":
-            # começa o jogo pelo primeiroJogador, que escolhe entre as opções abaixo.
+        while garantir_modo == "1":
+            # começa o jogo pelo primeiro_jogador, que escolhe entre as opções abaixo.
             os.system("cls")
             print("Excelente! Agora, se preparem para jogar!")
             time.sleep(3)
             os.system("cls")
-            print(f"{primeiroJogador}, escolha: (1) - Pedra, (2) - Papel, (3) - Tesoura")
-            escolhaJogadorUm = input("")
+            print(f"{primeiro_jogador}, escolha: (1) - Pedra, (2) - Papel, (3) - Tesoura")
+            escolha_jogador_um = input("")
             time.sleep(3)
             os.system("cls")
-            print(f"{segundoJogador}, escolha: (1) - Pedra, (2) - Papel, (3) - Tesoura")
-            escolhaJogadorDois = input("")
+            print(f"{segundo_jogador}, escolha: (1) - Pedra, (2) - Papel, (3) - Tesoura")
+            escolha_jogador_dois = input("")
             time.sleep(3)
             os.system("cls")
             
             # estabelece as lógicas entre cada opção e atualiza os status de vitórias
-            if escolhaJogadorUm == "1" and escolhaJogadorDois == "3":
-                vitoriasPrimeiroJogador += 1
-                print(f"Vitória de {primeiroJogador}! Ele(a) escolheu Pedra! {segundoJogador} escolheu Tesoura!")
-            elif escolhaJogadorUm == "2" and escolhaJogadorDois == "1":
-                vitoriasPrimeiroJogador += 1
-                print(f"Vitória de {primeiroJogador}! Ele(a) escolheu Papel! {segundoJogador} escolheu Pedra!")
-            elif escolhaJogadorUm == "3" and escolhaJogadorDois == "2":
-                vitoriasPrimeiroJogador += 1
-                print(f"Vitória de {primeiroJogador}! Ele(a) escolheu Tesoura! {segundoJogador} escolheu Papel!")
-            elif escolhaJogadorDois == "1" and escolhaJogadorUm == "3":
-                vitoriasSegundoJogador += 1
-                print(f"Vitória de {segundoJogador}! Ele(a) escolheu Pedra! {primeiroJogador} escolheu Tesoura!")
-            elif escolhaJogadorDois == "2" and escolhaJogadorUm == "1":
-                vitoriasSegundoJogador += 1
-                print(f"Vitória de {segundoJogador}! Ele(a) escolheu Papel! {primeiroJogador} escolheu Pedra!")
-            elif escolhaJogadorDois == "3" and escolhaJogadorUm == "2":
-                vitoriasSegundoJogador += 1
-                print(f"Vitória de {segundoJogador}! Ele(a) escolheu Tesoura! {primeiroJogador} escolheu Papel!")
+            if escolha_jogador_um == "1" and escolha_jogador_dois == "3":
+                vitorias_primeiro_jogador += 1
+                print(f"Vitória de {primeiro_jogador}! Ele(a) escolheu Pedra! {segundo_jogador} escolheu Tesoura!")
+            elif escolha_jogador_um == "2" and escolha_jogador_dois == "1":
+                vitorias_primeiro_jogador += 1
+                print(f"Vitória de {primeiro_jogador}! Ele(a) escolheu Papel! {segundo_jogador} escolheu Pedra!")
+            elif escolha_jogador_um == "3" and escolha_jogador_dois == "2":
+                vitorias_primeiro_jogador += 1
+                print(f"Vitória de {primeiro_jogador}! Ele(a) escolheu Tesoura! {segundo_jogador} escolheu Papel!")
+            elif escolha_jogador_dois == "1" and escolha_jogador_um == "3":
+                vitorias_segundo_jogador += 1
+                print(f"Vitória de {segundo_jogador}! Ele(a) escolheu Pedra! {primeiro_jogador} escolheu Tesoura!")
+            elif escolha_jogador_dois == "2" and escolha_jogador_um == "1":
+                vitorias_segundo_jogador += 1
+                print(f"Vitória de {segundo_jogador}! Ele(a) escolheu Papel! {primeiro_jogador} escolheu Pedra!")
+            elif escolha_jogador_dois == "3" and escolha_jogador_um == "2":
+                vitorias_segundo_jogador += 1
+                print(f"Vitória de {segundo_jogador}! Ele(a) escolheu Tesoura! {primeiro_jogador} escolheu Papel!")
             else:
                 print("Empate! Ambos escolheram a mesma opção!")
                 empates += 1
@@ -73,59 +73,59 @@ if escolherModo == "1":
             # mostra o placar geral após cada partida
             os.system("cls")
             print("--- PLACAR GERAL ---")
-            print(f"\nVitórias de {primeiroJogador}: {vitoriasPrimeiroJogador}")
-            print(f"Vitórias de {segundoJogador}: {vitoriasSegundoJogador}")
+            print(f"\nVitórias de {primeiro_jogador}: {vitorias_primeiro_jogador}")
+            print(f"Vitórias de {segundo_jogador}: {vitorias_segundo_jogador}")
             print("\n--------------------")
             time.sleep(3)
             
             # pergunta se os jogadores desejam continuar a jogar
             os.system("cls")
             print("A partida terminou. Deseja continuar? Digite (1 ) - Sim, (2) - Não")
-            terminarJogo = input("")
+            terminar_jogo = input("")
             # se sim, o loop continua
-            if terminarJogo == "1":
-                garantirModo = "1"
+            if terminar_jogo == "1":
+                garantir_modo = "1"
             # se não, o loop para e os valores são imprimidos
             else:
-                garantirModo = "2"
+                garantir_modo = "2"
                 time.sleep(3)
                 os.system("cls")
                 print("--- RESULTADO FINAL ---")
                 print(f"\nEmpates: {empates}")
-                print(f"Vitórias de {primeiroJogador}: {vitoriasPrimeiroJogador}")
-                print(f"Vitórias de {segundoJogador}: {vitoriasSegundoJogador}")
+                print(f"Vitórias de {primeiro_jogador}: {vitorias_primeiro_jogador}")
+                print(f"Vitórias de {segundo_jogador}: {vitorias_segundo_jogador}")
                 print("\n-----------------------")
-                print(f"\nObrigado por jogarem, {primeiroJogador} e {segundoJogador}!")
-    elif garantirModo == "2":
+                print(f"\nObrigado por jogarem, {primeiro_jogador} e {segundo_jogador}!")
+    elif garantir_modo == "2":
         os.system("cls")
         print("Programa encerrado!")
     else:
         os.system("cls")
         print("Programa encerrado! Digite algo válido da próxima vez!")
-elif escolherModo == "2":
+elif escolher_modo == "2":
     # certifica-se que o modo escolhido foi o correto
     os.system("cls")
     print("Modo escolhido: humano x computador. Caso deseje continuar, digite (1)")
     print("Caso deseje mudar o modo de jogo, digite (2) para encerrar o programa!")
-    garantirModo = input("")
+    garantir_modo = input("")
     
-    if garantirModo == "1":
+    if garantir_modo == "1":
         os.system("cls")
         # pega o nome do jogador
-        nomeJogador = input("Digite o seu nome: ")
+        nome_jogador = input("Digite o seu nome: ")
         # estabelece as variáveis iniciais
-        vitoriasJogador = 0
-        vitoriasComputador = 0
+        vitorias_jogador = 0
+        vitorias_computador = 0
         empates = 0
         
-        while garantirModo == "1":
+        while garantir_modo == "1":
             # começa o jogo pelo jogador, que escolhe entre as opções abaixo. Depois, vai para o computador
             os.system("cls")
             print("Excelente! Agora, se prepare para jogar!")
             time.sleep(3)
             os.system("cls")
-            print(f"{nomeJogador} escolha: (1) - Pedra, (2) - Papel, (3) - Tesoura")
-            escolhaJogador = input("")
+            print(f"{nome_jogador} escolha: (1) - Pedra, (2) - Papel, (3) - Tesoura")
+            escolha_jogador = input("")
             time.sleep(3)
             os.system("cls")
             print("Agora, o computador vai escolher: (1) - Pedra, (2) - Papel, (3) - Tesoura")
@@ -133,83 +133,83 @@ elif escolherModo == "2":
             # opções: 1 - Pedra, 2 - Papel, 3 - Tesoura
             opcoes = ["1", "2", "3"]
             # escolhe aleatoriamente, caso for computador, as opções acima
-            opcaoAleatoria = random.choice(opcoes)
+            opcao_aleatoria = random.choice(opcoes)
             os.system("cls")
             # estabelece as lógicas entre cada opção e atualiza os status de vitórias
-            if escolhaJogador == "1" and opcaoAleatoria == "3":
-                vitoriasJogador += 1
-                print(f"Vitória de {nomeJogador}! Ele(a) escolheu Pedra. O computador escolheu Tesoura!")
-            elif escolhaJogador == "2" and opcaoAleatoria == "1":
-                vitoriasJogador += 1
-                print(f"Vitória de {nomeJogador}! Ele(a) escolheu Papel. O computador escolheu Pedra!")
-            elif escolhaJogador == "3" and opcaoAleatoria == "2":
-                vitoriasJogador += 1
-                print(f"Vitória de {nomeJogador}! Ele(a) escolheu Tesoura. O computador escolheu Papel!")
-            elif opcaoAleatoria == "1" and escolhaJogador == "3":
-                vitoriasComputador += 1
-                print(f"Vitória do computador! Ele escolheu Pedra. {nomeJogador} escolheu Tesoura!")
-            elif opcaoAleatoria == "2" and escolhaJogador == "1":
-                vitoriasComputador += 1
-                print(f"Vitória do computador! Ele escolheu Papel. {nomeJogador} escolheu Pedra!")
-            elif opcaoAleatoria == "3" and escolhaJogador == "2":
-                vitoriasComputador += 1
-                print(f"Vitória do computador! Ele escolheu Tesoura. {nomeJogador} escolheu Papel!")
-            elif opcaoAleatoria == escolhaJogador:
-                if opcaoAleatoria == "1":
-                    opcaoAleatoria = "Pedra"
-                elif opcaoAleatoria == "2":
-                    opcaoAleatoria = "Papel"
+            if escolha_jogador == "1" and opcao_aleatoria == "3":
+                vitorias_jogador += 1
+                print(f"Vitória de {nome_jogador}! Ele(a) escolheu Pedra. O computador escolheu Tesoura!")
+            elif escolha_jogador == "2" and opcao_aleatoria == "1":
+                vitorias_jogador += 1
+                print(f"Vitória de {nome_jogador}! Ele(a) escolheu Papel. O computador escolheu Pedra!")
+            elif escolha_jogador == "3" and opcao_aleatoria == "2":
+                vitorias_jogador += 1
+                print(f"Vitória de {nome_jogador}! Ele(a) escolheu Tesoura. O computador escolheu Papel!")
+            elif opcao_aleatoria == "1" and escolha_jogador == "3":
+                vitorias_computador += 1
+                print(f"Vitória do computador! Ele escolheu Pedra. {nome_jogador} escolheu Tesoura!")
+            elif opcao_aleatoria == "2" and escolha_jogador == "1":
+                vitorias_computador += 1
+                print(f"Vitória do computador! Ele escolheu Papel. {nome_jogador} escolheu Pedra!")
+            elif opcao_aleatoria == "3" and escolha_jogador == "2":
+                vitorias_computador += 1
+                print(f"Vitória do computador! Ele escolheu Tesoura. {nome_jogador} escolheu Papel!")
+            elif opcao_aleatoria == escolha_jogador:
+                if opcao_aleatoria == "1":
+                    opcao_aleatoria = "Pedra"
+                elif opcao_aleatoria == "2":
+                    opcao_aleatoria = "Papel"
                 else:
-                    opcaoAleatoria = "Tesoura"
-                print(f"Empate! Ambos escolheram {opcaoAleatoria}!")
+                    opcao_aleatoria = "Tesoura"
+                print(f"Empate! Ambos escolheram {opcao_aleatoria}!")
                 empates += 1
             
             # mostra o placar geral após cada partida
             time.sleep(3)
             os.system("cls")
             print("--- PLACAR GERAL ---")
-            print(f"\nVitórias de {nomeJogador}: {vitoriasJogador}")
-            print(f"Vitórias do computador: {vitoriasComputador}")
+            print(f"\nVitórias de {nome_jogador}: {vitorias_jogador}")
+            print(f"Vitórias do computador: {vitorias_computador}")
             print("\n--------------------")
             
             # pergunta se o jogador deseja continuar a jogar
             time.sleep(3)
             os.system("cls")
             print("A partida terminou. Deseja continuar? Digite (1) - Sim, (2) - Não")
-            terminarJogo = input("")
+            terminar_jogo = input("")
             # se sim, o loop continua
-            if terminarJogo == "1":
-                garantirModo = "1"
+            if terminar_jogo == "1":
+                garantir_modo = "1"
             else:
-                garantirModo = "2"
+                garantir_modo = "2"
                 time.sleep(3)
                 os.system("cls")
                 print("--- RESULTADO FINAL ---")
                 print(f"\nEmpates: {empates}")
-                print(f"Vitórias de {nomeJogador}: {vitoriasJogador}")
-                print(f"Vitórias do computador: {vitoriasComputador}")
+                print(f"Vitórias de {nome_jogador}: {vitorias_jogador}")
+                print(f"Vitórias do computador: {vitorias_computador}")
                 print("\n-----------------------")
-                print(f"\nObrigado por jogar, {nomeJogador}!")
-    elif garantirModo == "2":
+                print(f"\nObrigado por jogar, {nome_jogador}!")
+    elif garantir_modo == "2":
         os.system("cls")
         print("Programa encerrado!")
     else:
         os.system("cls")
         print("Programa encerrado! Digite algo válido da próxima vez!")
-elif escolherModo == "3":
+elif escolher_modo == "3":
     # certifica-se que o modo escolhido foi o correto
     os.system("cls")
     print("Modo escolhido: computador x computador. Caso deseje continuar, digite (1).")
     print("Caso deseje mudar o modo de jogo, digite (2)")
-    garantirModo = input("")
+    garantir_modo = input("")
     
-    if garantirModo == "1":
+    if garantir_modo == "1":
         # estabelece as variáveis iniciais
-        vitoriasComputadorUm = 0
-        vitoriasComputadorDois = 0
+        vitorias_computador_um = 0
+        vitorias_computador_dois = 0
         empates = 0
         
-        while garantirModo == "1":
+        while garantir_modo == "1":
             # começa o jogo pelo computadorUm, que escolhe entre as opções abaixo.
             # depois, vai para o computadorDois
             os.system("cls")
@@ -219,51 +219,51 @@ elif escolherModo == "3":
             print("O COMPUTADOR UM irá escolher entre: (1) - Pedra, (2) - Papel, (3) - Tesoura")
             # opções: 1 - Pedra, 2 - Papel, 3 - Tesoura
             opcoes = ["1", "2", "3"]
-            opcaoAleatoriaComputadorUm = random.choice(opcoes)
+            opcao_aleatoria_computador_um = random.choice(opcoes)
             time.sleep(3)
-            if opcaoAleatoriaComputadorUm == "1":
-                opcaoEscolhidaUm = "Pedra"
-            elif opcaoAleatoriaComputadorUm == "2":
-                opcaoEscolhidaUm = "Papel"
+            if opcao_aleatoria_computador_um == "1":
+                opcao_escolhida_um = "Pedra"
+            elif opcao_aleatoria_computador_um == "2":
+                opcao_escolhida_um = "Papel"
             else:
-                opcaoEscolhidaUm = "Tesoura"
+                opcao_escolhida_um = "Tesoura"
             os.system("cls")
-            print(f"O COMPUTADOR UM escolheu: {opcaoEscolhidaUm}")
+            print(f"O COMPUTADOR UM escolheu: {opcao_escolhida_um}")
             time.sleep(3)
             os.system("cls")
             print("Agora, o COMPUTADOR DOIS vai escolher: (1) - Pedra, (2) - Papel, (3) - Tesoura")
-            opcaoAleatoriaComputadorDois = random.choice(opcoes)
+            opcao_aleatoria_computador_dois = random.choice(opcoes)
             time.sleep(3)
-            if opcaoAleatoriaComputadorDois == "1":
-                opcaoEscolhidaDois = "Pedra"
-            elif opcaoAleatoriaComputadorDois == "2":
-                opcaoEscolhidaDois = "Papel"
+            if opcao_aleatoria_computador_dois == "1":
+                opcao_escolhida_dois = "Pedra"
+            elif opcao_aleatoria_computador_dois == "2":
+                opcao_escolhida_dois = "Papel"
             else:
-                opcaoEscolhidaDois = "Tesoura"
+                opcao_escolhida_dois = "Tesoura"
             os.system("cls")
-            print(f"O COMPUTADOR DOIS escolheu: {opcaoEscolhidaDois}")
+            print(f"O COMPUTADOR DOIS escolheu: {opcao_escolhida_dois}")
             time.sleep(3)
             os.system("cls")
             # estabelece as lógicas entre cada opção e atualiza os status de vitórias
-            if opcaoAleatoriaComputadorUm == "1" and opcaoAleatoriaComputadorDois == "3":
-                vitoriasComputadorUm += 1
+            if opcao_aleatoria_computador_um == "1" and opcao_aleatoria_computador_dois == "3":
+                vitorias_computador_um += 1
                 print("Vitória do COMPUTADOR UM! Ele escolheu Pedra. O COMPUTADOR DOIS escolheu Tesoura!")
-            elif opcaoAleatoriaComputadorUm == "2" and opcaoAleatoriaComputadorDois == "1":
-                vitoriasComputadorUm += 1
+            elif opcao_aleatoria_computador_um == "2" and opcao_aleatoria_computador_dois == "1":
+                vitorias_computador_um += 1
                 print("Vitória do COMPUTADOR UM! Ele escolheu Papel. O COMPUTADOR DOIS escolheu Pedra!")
-            elif opcaoAleatoriaComputadorUm == "3" and opcaoAleatoriaComputadorDois == "2":
-                vitoriasComputadorUm += 1
+            elif opcao_aleatoria_computador_um == "3" and opcao_aleatoria_computador_dois == "2":
+                vitorias_computador_um += 1
                 print(" Vitória do COMPUTADOR UM! Ele escolheu Tesoura. O COMPUTADOR DOIS escolheu Papel!")
-            elif opcaoAleatoriaComputadorDois == "1" and opcaoAleatoriaComputadorUm == "3":
-                vitoriasComputadorDois += 1
+            elif opcao_aleatoria_computador_dois == "1" and opcao_aleatoria_computador_um == "3":
+                vitorias_computador_dois += 1
                 print("Vitória do COMPUTADOR DOIS! Ele escolheu Pedra! O COMPUTADOR UM escolheu Tesoura!")
-            elif opcaoAleatoriaComputadorDois == "2" and opcaoAleatoriaComputadorUm == "1":
-                vitoriasComputadorDois += 1
+            elif opcao_aleatoria_computador_dois == "2" and opcao_aleatoria_computador_um == "1":
+                vitorias_computador_dois += 1
                 print("Vitória do COMPUTADOR DOIS! Ele escolheu Papel! O COMPUTADOR UM escolheu Pedra!")
-            elif opcaoAleatoriaComputadorDois == "3" and opcaoAleatoriaComputadorUm == "2":
-                vitoriasComputadorDois += 1
+            elif opcao_aleatoria_computador_dois == "3" and opcao_aleatoria_computador_um == "2":
+                vitorias_computador_dois += 1
                 print("Vitória do COMPUTADOR DOIS! Ele escolheu Tesoura! O COMPUTADOR UM escolheu Papel!")
-            elif opcaoAleatoriaComputadorDois == opcaoAleatoriaComputadorUm:
+            elif opcao_aleatoria_computador_dois == opcao_aleatoria_computador_um:
                 print("Empate! Ambos os computadores escolheram a mesma jogada!")
                 empates += 1
             
@@ -271,29 +271,30 @@ elif escolherModo == "3":
             # mostra o placar geral após cada partida
             os.system("cls")
             print("--- PLACAR GERAL ---")
-            print(f"\nVitórias do COMPUTADOR UM: {vitoriasComputadorUm}")
-            print(f"Vitórias do COMPUTADOR DOIS: {vitoriasComputadorDois}")
+            print(f"\nVitórias do COMPUTADOR UM: {vitorias_computador_um}")
+            print(f"Vitórias do COMPUTADOR DOIS: {vitorias_computador_dois}")
             print("\n--------------------")
             time.sleep(3)
             # pergunta se o jogador deseja continuar a assistir
             os.system("cls")
             print("A partida terminou. Deseja continuar a assistir? Digite (1) - Sim, (2) - Não")
-            terminarJogo = input("")
+            terminar_jogo = input("")
             # se sim, o loop continua
-            if terminarJogo == "1":
-                garantirModo = "1"
+            if terminar_jogo == "1":
+                garantir_modo = "1"
             # se não, o loop para e os valores finais são imprimidos
             else:
-                garantirModo = "2"
+                garantir_modo = "2"
                 time.sleep(3)
                 os.system("cls")
                 print("--- RESULTADO FINAL ---")
                 print(f"\nEmpates: {empates}")
-                print(f"Vitórias do COMPUTADOR UM: {vitoriasComputadorUm}")
-                print(f"Vitórias do COMPUTADOR DOIS: {vitoriasComputadorDois}")
+                print(f"Vitórias do COMPUTADOR UM: {vitorias_computador_um}")
+                print(f"Vitórias do COMPUTADOR DOIS: {vitorias_computador_dois}")
                 print("\n-----------------------")
                 print("\nObrigado por assistir os computadores jogarem!")
-    elif garantirModo == "2":
+                
+    elif garantir_modo == "2":
         os.system("cls")
         print("Programa encerrado!")
     else:
