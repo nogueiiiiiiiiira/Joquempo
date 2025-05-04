@@ -53,11 +53,11 @@ Ao executar o programa, você poderá escolher um dos três modos de jogo. Depen
 ## Como executar? ▶️
 
 1. Abra o terminal ou prompt de comando.
-2. Navegue até a pasta onde o arquivo `app2.py` está salvo.
+2. Navegue até a pasta onde o arquivo `jogo.py` está salvo.
 3. Execute o comando:
 
 ```bash
-python app2.py
+python jogo.py
 ```
 
 4. Siga as instruções na tela para escolher o modo de jogo e jogar.
@@ -75,7 +75,3 @@ python app2.py
 ## Divirta-se! 🎉
 
 Aproveite o jogo e desafie seus amigos ou apenas assista os computadores jogarem!
-
----
-
-*Este programa foi desenvolvido para fins educativos e diversão.* 😄
